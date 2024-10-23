@@ -35,8 +35,16 @@ function showList(array) {
     container.appendChild(li);
   });
 }
-
+//filtrar los elementos de tipo string y usar showlist(elemsfiltrados)
 document.addEventListener("DOMContentLoaded", (e) => {
   // Escribe tu solución aquí
   // Sugerencia de cómo mostrar el array => showList(strangeArray);
+ // Filtra los elementos de tipo string
+ const stringElements = strangeArray.filter((element) => typeof element === "string");
+
+ // Ordena los elementos alfabéticamente ignorando mayúsculas y minúsculas
+ const sortedElements = stringElements.sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase()));
+
+ // Muestra los elementos filtrados y ordenados en pantalla
+ showList(sortedElements);
 });
